@@ -54,6 +54,10 @@ const removeCar = () => {
   wishlist.remove(carId);
   updateDOMList();
   form.reset();
+  [carMakeP, carModelP, carYearP].forEach(
+    (element) => (element.textContent = "")
+  );
+  removeButton.removeAttribute("data-carId");
   removeButton.disabled = true;
 };
 
